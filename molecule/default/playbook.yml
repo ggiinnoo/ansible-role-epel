@@ -4,4 +4,4 @@
   become: true
 
   roles:
-    - ansible-role-remi
+    - ansible-role-epel

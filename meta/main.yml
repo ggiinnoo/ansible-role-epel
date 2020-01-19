@@ -1,21 +1,22 @@
 ---
 
 galaxy_info:
-  role_name: remi_repo
+  role_name: epel_repo
   author: Gino Jansen
-  description: Configure remi repository
+  description: Configure epel repository
   license: license (BSD, MIT)
   platforms:
     - name: CentOS
       versions:
         - 6
         - 7
+        - 8
 
   min_ansible_version: 2.9
 
   galaxy_tags:
     - centos
-    - remi
+    - epel
     - repo
 
 dependencies: []

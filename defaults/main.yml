@@ -1,23 +1,12 @@
 ---
 
 # List of all the repos
-remiCentosRepoList:
-  - name: remi-glpi91
-  - name: remi-glpi92
-  - name: remi-glpi93
-  - name: remi-glpi94
-  - name: remi-modular
-  - name: remi-php54
-  - name: remi-php70
-  - name: remi-php71
-  - name: remi-php72
-  - name: remi-php73
-  - name: remi-php74
-  - name: remi
-  - name: remi-safe
+epelCentosRepoList:
+  - name: epel
     state: enable
+  - name: epel-testing
 
 # Centos specific vars
-remiCentosUrl: "https://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm"
-remiCentosRpmKey: "https://rpms.remirepo.net/RPM-GPG-KEY-remi"
-remiCentosState: "present"
+epelCentosUrl: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+epelCentosRpmKey: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL"
+epelCentosState: "present"

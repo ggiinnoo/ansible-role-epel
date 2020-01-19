@@ -1,16 +1,16 @@
 ---
 
 # add repo
-- name: Install remi repo
+- name: Install epel repo
   yum:
-    name: "{{ remiCentosUrl }}"
-    state: "{{ remiCentosState }}"
+    name: "{{ epelCentosUrl }}"
+    state: "{{ epelCentosState }}"
 
-# add the remi rpm key
+# add the epel rpm key
 - name: add rpm key
   rpm_key:
-    key: "{{ remiCentosRpmKey }}"
-    state: "{{ remiCentosState }}"
+    key: "{{ epelCentosRpmKey }}"
+    state: "{{ epelCentosState }}"
 
 # enable/disable the correct repo's
 - name: configure repo's
@@ -18,4 +18,4 @@
   register: yumConfigStatus
   changed_when: yumConfigStatus.rc == 2
   with_items:
-    - "{{ remiCentosRepoList }}"
+    - "{{ epelCentosRepoList }}"
