@@ -8,5 +8,5 @@ epelCentosRepoList:
 
 # Centos specific vars
 epelCentosUrl: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
-epelCentosRpmKey: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL"
+epelCentosRpmKey: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
 epelCentosState: "present"
