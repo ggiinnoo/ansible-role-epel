@@ -1,19 +1,24 @@
 ---
 
+- name: Epel | RedHat | Install required tools
+  yum:
+    name: "yum-utils"
+    state: "installed"
+
 # add repo
-- name: Install epel repo
+- name: Epel | RedHat | Install epel repo
   yum:
     name: "{{ epelCentosUrl }}"
     state: "{{ epelCentosState }}"
 
 # add the epel rpm key
-- name: add rpm key
+- name: Epel | RedHat | add rpm key
   rpm_key:
     key: "{{ epelCentosRpmKey }}"
     state: "{{ epelCentosState }}"
 
 # enable/disable the correct repo's
-- name: configure repo's
+- name: Epel | RedHat | configure repo's
   command: "yum-config-manager --{{ item.state | default('disable') }} {{ item.name }}"
   register: yumConfigStatus
   changed_when: yumConfigStatus.rc == 2
