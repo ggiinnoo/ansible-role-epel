@@ -5,16 +5,16 @@
     name: "yum-utils"
     state: "installed"
 
-# add repo
-- name: Epel | RedHat | Install epel repo
-  yum:
-    name: "{{ epelCentosUrl }}"
-    state: "{{ epelCentosState }}"
-
 # add the epel rpm key
 - name: Epel | RedHat | add rpm key
   rpm_key:
     key: "{{ epelCentosRpmKey }}"
+    state: "{{ epelCentosState }}"
+
+# add repo
+- name: Epel | RedHat | Install epel repo
+  yum:
+    name: "{{ epelCentosUrl }}"
     state: "{{ epelCentosState }}"
 
 # enable/disable the correct repo's
